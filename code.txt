@@ -1,0 +1,18 @@
+/*
+
+*/
+
+int waterSens = A0;   //define water sensor
+
+int waterVal;        //define the water sensor value
+
+void setup(){
+  Serial.begin(9600);   //set the baud rate of the communication
+  pinMode(waterSens,INPUT);  //define the pin as Input
+}
+
+void loop(){
+  float val = analogRead(waterSens);  //read the water sensor value
+  Serial.print(val);    //to send the data in text format
+  delay(400);          //small delay between each data send
+}
